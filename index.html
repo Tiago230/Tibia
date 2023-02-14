@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TIBIA "LET'S GO"!</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+   
+p {
+  color: rgb(241, 241, 241);
+  text-align: center;
+  font-size: 150px;
+  margin-top: 200px;
+  
+}
+</style>
+</head>
+
+<body>
+  
+  <h1>Tempo estimado para todos jogarem Tibia.</h1>
+<p id="demo"></p>
+
+<script>
+// Define a data para a qual estamos em contagem regressiva
+var countDownDate = new Date("Feb 29, 2024 00:00:00").getTime();
+
+// Atualize a contagem regressiva a cada 1 segundo
+var x = setInterval(function() {
+
+  // Obter data e hora de hoje
+  var now = new Date().getTime();
+    
+  // Encontre a distância entre agora e a data de contagem regressiva
+  var distance = countDownDate - now;
+    
+  // Cálculos de tempo para dias, horas, minutos e segundos
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Emita o resultado em um elemento com id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // Se a contagem regressiva terminar, escreva algum texto
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+</body>
+</html>
